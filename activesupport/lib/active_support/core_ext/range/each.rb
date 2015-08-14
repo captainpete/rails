@@ -9,7 +9,7 @@ module ActiveSupport
       return to_enum(:step, step_size) unless block_given?
 
       # Defer to Range for steps other than durations on times
-      unless step_size.is_a?(ActiveSupport::Duration) && self.begin.kind_of?(DateTime) && self.end.kind_of?(DateTime)
+      unless step_size.is_a? ActiveSupport::Duration
         ensure_iteration_allowed
         return super
       end

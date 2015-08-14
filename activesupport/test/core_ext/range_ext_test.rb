@@ -124,8 +124,8 @@ class RangeTest < ActiveSupport::TestCase
   end
 
   def test_date_time_with_step_duration
-    start     = DateTime.new(2011, 11, 11)
-    finish    = DateTime.new(2011, 11, 11, 2)
+    start     = Time.new(2011, 11, 11)
+    finish    = Date.new(2011, 11, 12)
     step_size = 40.minutes + 20.seconds
     assert((start..finish).step(step_size) {})
   end
